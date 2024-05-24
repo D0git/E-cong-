@@ -1,0 +1,108 @@
+<form class="color" >
+  <!--1L-->
+  <div class="form-row" style="display: flex;">
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="nom">Nom :</label>
+      <input type="text" [(ngModel)]="Nom" [ngModelOptions]="{standalone: true}" class="form-control" id="nom" name="nom">
+    </div>
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="prenom">Prénom :</label>
+      <input type="text" [(ngModel)]="Prenom" [ngModelOptions]="{standalone: true}" class="form-control" id="prenom" name="prenom">
+    </div>
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="tel">Téléphone :</label>
+      <input type="tel" [(ngModel)]="Tel" [ngModelOptions]="{standalone: true}" class="form-control" id="tel" name="tel">
+    </div>
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="email">Email :</label>
+      <input type="email" [(ngModel)]="Email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" name="email">
+    </div>
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="adresse">Adresse :</label>
+      <input type="text" [(ngModel)]="Adresse" [ngModelOptions]="{standalone: true}" class="form-control" id="adresse" name="adresse">
+    </div>
+
+  </div>
+
+<!--2L-->
+  <div class="form-row" style="display: flex;">
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="salaire">Salaire :</label>
+      <input type="number" [(ngModel)]="Salaire" [ngModelOptions]="{standalone: true}" class="form-control" id="salaire" name="salaire">
+    </div>
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="date_embauche">Date d'embauche :</label>
+      <input type="date" [(ngModel)]="Date_embauche" [ngModelOptions]="{standalone: true}" class="form-control" id="date_embauche" name="date_embauche">
+    </div>
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="nom_utilisateur">Nom d'utilisateur :</label>
+      <input type="text" [(ngModel)]="Nom_utilisateur" [ngModelOptions]="{standalone: true}" class="form-control" id="nom_utilisateur" name="nom_utilisateur">
+    </div>
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="mot_de_passe">Mot de passe :</label>
+      <input type="password" [(ngModel)]="Mot_de_passe" [ngModelOptions]="{standalone: true}" class="form-control" id="mot_de_passe" name="mot_de_passe">
+    </div>
+
+    <div class="form-group col-md-2 marge mt-2">
+      <label for="sexe">Sexe :</label>
+      <select class="form-control" [(ngModel)]="Sexe" [ngModelOptions]="{standalone: true}" id="sexe" name="sexe">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
+    </div>
+  </div>
+  <div>
+
+  </div>
+  <div style="display: flex;" class="E_M">
+    <button type="submit" class="btn btn-primary btn1" (click)="Ajouter_emp()">Enregistrer</button>
+    <button type="submit" class="btn btn-warning" (click)="Modifier()">Modifier</button>
+  </div>
+  <div class="input-group mb-2">
+    <input type="search" class="form-control recherche" [(ngModel)]="Prenom" [ngModelOptions]="{standalone: true}"  placeholder="Rechercher un employé par prénom...">
+    <button class="btn btn-primary mr1" style="border-radius: 10%;background-color: #7066e0; border-color: #7066e0;" (click)="Rechercher_emp()"><i class="fa-solid fa-magnifying-glass"></i></button>&nbsp;&nbsp;
+    <button class="btn btn-primary mr btn1" style="border-radius: 10%;" (click)="Afficher_emp()">Annuler</button>
+  </div>
+
+</form>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Adresse</th>
+      <th>Salaire</th>
+      <th>Date d'embauche</th>
+      <th>Sexe</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employe of employesTab">
+
+      <td>{{ employe.Nom }}</td>
+      <td>{{ employe.Prenom }}</td>
+      <td>{{ employe.Tel }}</td>
+      <td>{{ employe.Email }}</td>
+      <td>{{ employe.Adresse }}</td>
+      <td>{{ employe.Salaire }}</td>
+      <td>{{ employe.Date_embauche }}</td>
+      <td>{{ employe.Sexe }}</td>
+      <td>
+        <button (click)="Confirmer_supp(employe)" style="background-color: #7066e0; border-color: #7066e0;"><i class="fa-solid fa-trash no-print"  ></i></button> &nbsp;
+        <button (click)="Modifier_emp(employe)" style="background-color: #ffc107;  border-color: #ffc107;"><i class="fa-solid fa-pen-to-square no-print"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>

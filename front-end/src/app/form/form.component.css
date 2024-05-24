@@ -1,0 +1,42 @@
+div{
+  text-align: center;
+}
+
+h2{
+  margin-top: 110px;
+}
+.alert-danger{
+  background-color: red;
+}
+.alert{
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+input, .alert-danger{
+  margin-left: 50px;
+  width: 400px;
+}
+label,h2,button{
+  margin-left: 50px;
+}
+label{
+  font-size: 17px;
+}
+form{
+  margin-top: 90px;
+  margin-left: 50px;
+}
+img{
+  width: 600px;
+  margin-bottom: 50px;
+}
+.left{
+  margin-left: 20px;
+}
+p{
+  font-size: 20px;
+}
+h2{
+  font-size: 30px;
+}

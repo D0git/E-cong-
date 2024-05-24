@@ -1,0 +1,39 @@
+
+.navbar{
+  background-color: #7066e0;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+
+a{
+  color: white;
+}
+ul{
+  text-align: center;
+}
+h2{
+  color: white;
+  margin-top: 5px;
+}
+.navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: auto;
+}
+
+.navbar-nav .nav-item-title {
+  margin-right: auto;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px;
+}
+img{
+  width: 180px;
+  height: 90px;
+  padding-inline: 10px
+
+}
+

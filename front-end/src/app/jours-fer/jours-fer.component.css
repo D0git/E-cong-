@@ -1,0 +1,29 @@
+
+
+
+.en-tete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
+
+th {
+  font-weight: bold;
+}
+
+.jour-ferie {
+  background-color: #FFCCCC;
+  cursor: pointer;
+}
+

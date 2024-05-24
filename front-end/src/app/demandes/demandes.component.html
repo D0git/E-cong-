@@ -1,0 +1,95 @@
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" (click)="Afficher_dem_en_cours()">En cours</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" (click)="Afficher_dem_acceptees()">Acceptées</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" (click)="Afficher_dem_refusees()">Refusées</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="#nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Etat</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th *ngIf="demandesTab.length && demandesTab[0].etat === 'En cours'">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let demande of demandesTab">
+            <td>{{ demande.id }}</td>
+            <td>{{ demande.etat }}</td>
+            <td>{{ demande.Nom }}</td>
+            <td>{{ demande.Prenom }}</td>
+            <td>{{ demande.Date_debut }}</td>
+            <td>{{ demande.Date_fin }}</td>
+            <td>
+              <button type="button" class="btn btn-success" *ngIf="demande.etat === 'En cours'" (click)="Accepter_demande(demande.id)" style="background-color: #7066e0; border-color:#7066e0 ;">Accepter</button>
+              <button type="button" class="btn btn-danger"  *ngIf="demande.etat === 'En cours'" (click)="Refuser_demande(demande.id)"style="background-color: #ffc107; border-color:#ffc107" >Refuser</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="#nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Etat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let demande of demandesTab">
+            <td>{{ demande.id }}</td>
+            <td>{{ demande.Nom }}</td>
+            <td>{{ demande.Prenom }}</td>
+            <td>{{ demande.Date_debut }}</td>
+            <td>{{ demande.Date_fin }}</td>
+            <td>{{ demande.etat }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="#nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>ID_conge</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Etat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let demande of demandesTab">
+            <td>{{ demande.id }}</td>
+            <td>{{ demande.CIN_id }}</td>
+            <td>{{ demande.code_conge_id }}</td>
+            <td>{{ demande.Date_debut }}</td>
+            <td>{{ demande.Date_fin }}</td>
+            <td>{{ demande.etat }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
