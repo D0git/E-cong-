@@ -17,4 +17,4 @@ class Employe(models.Model):
     Sexe = models.CharField(max_length=1, choices=[('M', 'Masculin'),('F', 'Féminin')]
 )
 
-
+//
